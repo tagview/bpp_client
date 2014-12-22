@@ -1,7 +1,11 @@
 # coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'bpp_client/version'
+
+["../lib", "../spec"].each do |folder|
+  path = File.expand_path(folder, __FILE__)
+  $LOAD_PATH.unshift(path) unless $LOAD_PATH.include?(path)
+end
+
+require "bpp_client/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "bpp_client"
