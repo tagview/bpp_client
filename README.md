@@ -1,6 +1,6 @@
 # BppClient
 
-TODO: Write a gem description
+Ruby client for handling the Brasil pre-pagos API
 
 ## Installation
 
@@ -17,10 +17,6 @@ And then execute:
 Or install it yourself as:
 
     $ gem install bpp_client
-
-## Usage
-
-TODO: Write usage instructions here
 
 ## Contributing
 
