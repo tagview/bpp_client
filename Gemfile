@@ -4,9 +4,8 @@ gemspec
 gem "rake"
 gem "activesupport"
 
-group :development do
+group :development, :test do
   gem "pry"
-  gem "pry-byebug"
 end
 
 group :test do
