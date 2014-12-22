@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Tagview"]
   spec.email         = ["contato@tagview.com.br"]
   spec.summary       = "Client for Brasil pre-pagos' API"
-  spec.description   = "Client for Brasil pre-pagos' API"
+  spec.description   = "Ruby client for handling Brasil pre-pagos' API"
   spec.homepage      = "https://github.com/tagview/bpp_client"
   spec.license       = "MIT"
 
@@ -20,4 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "activeresource", '~> 4.0', '>= 4.0.0'
+  spec.add_development_dependency "pry"
+  spec.add_development_dependency "pry-byebug"
 end
