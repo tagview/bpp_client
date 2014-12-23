@@ -1,6 +1,6 @@
 # coding: utf-8
 
-["../lib", "../spec"].each do |folder|
+["../lib", "../spec", "../config"].each do |folder|
   path = File.expand_path(folder, __FILE__)
   $LOAD_PATH.unshift(path) unless $LOAD_PATH.include?(path)
 end
@@ -25,5 +25,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "activeresource", '~> 4.0', '>= 4.0.0'
-  spec.add_development_dependency "pry", "~> 0.10.1"
+  spec.add_development_dependency "pry", "~> 0.10", ">= 0.10.1"
 end

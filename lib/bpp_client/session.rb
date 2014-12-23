@@ -1,7 +1,7 @@
 class BppClient::Session
   class InvalidCredentials < StandardError; end
   class Repository < ActiveResource::Base
-    self.site = "http://localhost:3000/api/v2"
+    self.site = "#{BppClient.configuration.base_host}/api/v2"
     self.collection_name = "authentication"
 
     def save
@@ -17,7 +17,7 @@ class BppClient::Session
   end
 
   def repository
-    @repository ||= Repository.new(email: @email, password: @password)
+    @repository = Repository.new(email: @email, password: @password)
   end
 
   def save
