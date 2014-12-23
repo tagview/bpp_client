@@ -1,8 +1,13 @@
 class BppClient::Session
+  class SessionError < StandardError; end
   class InvalidCredentials < StandardError; end
   class Repository < ActiveResource::Base
-    self.site = "#{BppClient.configuration.base_host}/api/v2"
     self.collection_name = "authentication"
+
+    def initialize(**kwargs)
+      self.class.site = "#{BppClient.configuration.base_host}/api/v2"
+      super
+    end
 
     def save
       create
@@ -25,5 +30,7 @@ class BppClient::Session
     @token = JSON.parse(response.body)["token"]
   rescue ActiveResource::ResourceInvalid
     raise InvalidCredentials
+  rescue ActiveResource::ClientError => e
+    raise SessionError, e.message
   end
 end
